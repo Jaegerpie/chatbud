@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <aside class="sidebar">
+        <div class="sidebar__top">
+          <div class="brand">
+            <div class="brand__dot" aria-hidden="true"></div>
+            <div class="brand__text">
+              <div class="brand__title">AI Chatbot</div>
+              <div class="brand__sub">OpenRouter</div>
+            </div>
+          </div>
+
+          <button class="btn btn--primary" id="newChatBtn" type="button">
+            New Chat
+          </button>
+        </div>
+
+        <div class="sidebar__section">
+          <div class="sidebar__sectionTitle">Chats</div>
+          <ul class="chatList" id="chatList">
+            <li class="chatList__item chatList__item--active">Welcome</li>
+            <li class="chatList__item">Example chat</li>
+            <li class="chatList__item">Another chat</li>
+          </ul>
+        </div>
+
+        <div class="sidebar__bottom">
+          <button class="btn btn--ghost" id="themeToggle" type="button">
+            Toggle theme
+          </button>
+          <a class="sidebar__link" href="#" id="settingsLink">Settings</a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="topbar__title">Chat</div>
+          <div class="topbar__hint">
+            Backend: <span class="mono">localhost:8000</span>
+          </div>
+        </header>
+
+        <section class="chat" aria-label="Chat messages">
+          <div class="chat__scroll" id="chatScroll">
+            <div class="msg msg--bot">
+              <div class="bubble">
+                Hi! Ask me anything. (Tip: set <span class="mono">OPENROUTER_API_KEY</span> in
+                <span class="mono">.env</span>)
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="composer">
+          <form class="composer__form" id="chatForm" autocomplete="off">
+            <input
+              class="composer__input"
+              id="chatInput"
+              type="text"
+              placeholder="Message…"
+              maxlength="4000"
+            />
+            <button class="btn btn--primary composer__send" id="sendBtn" type="submit">
+              Send
+            </button>
+          </form>
+          <div class="composer__fineprint">
+            Press <span class="kbd">Enter</span> to send
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
